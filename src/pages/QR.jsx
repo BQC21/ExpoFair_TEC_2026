@@ -40,12 +40,12 @@ function QR() {
                 </p>
             </section>
 
-            <Link
+            {/* <Link
                 to="/form"
                 className="mt-6 text-sm text-[#7eb6e0] underline underline-offset-2 hover:text-white"
             >
                 [Vista previa: abrir formulario]
-            </Link>
+            </Link> */}
 
             <footer className="mt-8 text-xs text-[#6b8aaa]">
                 tec-energysolutions.pe · Lima, Perú
