@@ -48,7 +48,7 @@ function QR() {
             </Link> */}
 
             <footer className="mt-8 text-xs text-[#6b8aaa]">
-                tec-energysolutions.pe · Lima, Perú
+                tec-energysolutions · Lima, Perú
             </footer>
         </main>
     );

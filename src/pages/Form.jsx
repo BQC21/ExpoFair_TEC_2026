@@ -70,7 +70,7 @@ function Form() {
                             Formulario de Contacto
                         </h1>
                         <p className="text-sm text-brand-muted">
-                            Expoferia 2026 · TEC Energy Solutions
+                            ExpoEnergetica 2026 · TEC Energy Solutions
                         </p>
                     </div>
                 </header>
