@@ -10,8 +10,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={(<QR />)}/>
-          <Route path="/login" element={<Form />} />
-          <Route path="/register" element={<Confirm />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/confirm" element={<Confirm />} />
         </Routes>
       </BrowserRouter>
   )
