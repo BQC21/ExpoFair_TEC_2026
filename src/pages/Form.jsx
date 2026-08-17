@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { questions } from "../utils/questions.js";
 import { validateAnswers } from "../utils/validators.js";
+import { postCliente } from "../services/response.service.js";
 import Field from "../components/Field.jsx";
 
 function Form() {
@@ -10,6 +11,8 @@ function Form() {
         Object.fromEntries(questions.map((question) => [question.id, ""])),
     );
     const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState(null);
     const navigate = useNavigate();
 
     const handleChange = (id, value) => {
@@ -22,16 +25,29 @@ function Form() {
         });
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         const nextErrors = validateAnswers(questions, answers);
         setErrors(nextErrors);
+        setSubmitError(null);
 
+        // Mostrar mensajes de error (rptas inválidas)
         if (Object.keys(nextErrors).length > 0) {
             return;
         }
 
+        // Enviar al Supabase
+        setIsSubmitting(true);
+        const { error } = await postCliente(answers);
+        setIsSubmitting(false);
+
+        if (error) {
+            setSubmitError("No se pudieron guardar las respuestas. Inténtalo de nuevo.");
+            return;
+        }
+
+        // Página de confirmación
         navigate("/confirm");
     };
 
@@ -67,11 +83,16 @@ function Form() {
                         />
                     ))}
 
+                    {submitError && (
+                        <p className="text-sm text-red-400">{submitError}</p>
+                    )}
+
                     <button
-                        className="mt-2 w-full rounded-full bg-brand-green py-3.5 text-base font-semibold text-white transition hover:bg-brand-green-dark"
+                        className="mt-2 w-full rounded-full bg-brand-green py-3.5 text-base font-semibold text-white transition hover:bg-brand-green-dark disabled:cursor-not-allowed disabled:opacity-60"
                         type="submit"
+                        disabled={isSubmitting}
                     >
-                        Enviar respuestas →
+                        {isSubmitting ? "Enviando..." : "Enviar respuestas →"}
                     </button>
                 </form>
             </div>
