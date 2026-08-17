@@ -8,7 +8,7 @@ function App() {
   return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={(<QR />)}/>
+          <Route path="/" element={<QR />} />
           <Route path="/form" element={<Form />} />
           <Route path="/confirm" element={<Confirm />} />
         </Routes>

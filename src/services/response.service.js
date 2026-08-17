@@ -18,6 +18,10 @@ function mapAnswersToCliente(answers) {
 
 // Querie function (POST)
 export async function postCliente(answers) {
+    if (!supabase) {
+        return { error: { message: "Supabase no está configurado." } };
+    }
+
     const { error } = await supabase
         .from("Clientes")
         .insert(mapAnswersToCliente(answers));

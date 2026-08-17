@@ -37,18 +37,21 @@ function Form() {
             return;
         }
 
-        // Enviar al Supabase
         setIsSubmitting(true);
-        const { error } = await postCliente(answers);
-        setIsSubmitting(false);
-
-        if (error) {
+        try {
+            const { error } = await postCliente(answers);
+            if (error) {
+                console.error("Supabase insert error:", error.message, error.code, error.hint);
+                setSubmitError("No se pudieron guardar las respuestas. Inténtalo de nuevo.");
+                return;
+            }
+            navigate("/confirm");
+        } catch (err) {
+            console.error("Submit failed:", err);
             setSubmitError("No se pudieron guardar las respuestas. Inténtalo de nuevo.");
-            return;
+        } finally {
+            setIsSubmitting(false);
         }
-
-        // Página de confirmación
-        navigate("/confirm");
     };
 
     return (
