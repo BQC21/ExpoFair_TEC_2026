@@ -34,7 +34,10 @@ function Confirm() {
             </p>
 
             <footer className="mt-16 text-xs text-[#6b8aaa]">
-                tec-energysolutions.pe · Lima, Perú
+                <h2>Para mayor información consulte nuestra página web</h2>
+                <a href="tec-energysolutions.pe"
+                className="mt-6 text-sm text-[#7eb6e0] underline underline-offset-2 hover:text-white">
+                    tec-energysolutions.pe</a>
             </footer>
         </main>
     );
