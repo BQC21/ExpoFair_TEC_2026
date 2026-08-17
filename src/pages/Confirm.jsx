@@ -1,3 +1,5 @@
+import {Tec_ES_logo} from "public/Tec_ES_logo.png";
+
 function Confirm() {
     return (
         <>
