@@ -43,8 +43,7 @@ export const questions = [
         type: 'radio',
         options: ['Sí, tengo interés inmediato', 
             'Sí, para el mediano plazo', 
-            'Estoy evaluando opciones', 
-            'No por el momento'],
+            'Estoy evaluando opciones'], 
         required: true,
     },
     {
@@ -66,16 +65,6 @@ export const questions = [
             'Sí, lo hemos evaluado', 
             'No, pero nos interesa', 
             'No hemos considerado aún'],
-        required: true,
-    },
-    {
-        id: 'propuesta',
-        label: '10. ¿Le gustaría recibir una propuesta personalizada de TEC Energy Solutions?',
-        type: 'radio',
-        options: ['Sí, con urgencia', 
-            'Sí, en los próximos 30 días', 
-            'Quizás más adelante', 
-            'Solo quiero información general'],
         required: true,
     },
 ]
