@@ -35,9 +35,6 @@ function QR() {
                 <h2 className="mb-2 text-xl font-bold text-white">
                     Registra tu interés
                 </h2>
-                <p className="text-sm leading-relaxed text-[#9bb8d4]">
-                    Completa el formulario y recibe una propuesta personalizada de energía para tu empresa
-                </p>
             </section>
 
             {/* <Link
@@ -47,9 +44,13 @@ function QR() {
                 [Vista previa: abrir formulario]
             </Link> */}
 
-            <footer className="mt-8 text-xs text-[#6b8aaa]">
-                tec-energysolutions · Lima, Perú
-            </footer>
+            <Link
+                to="/form"
+                className="mt-6 text-sm text-[#7eb6e0] underline underline-offset-2 hover:text-white"
+            >
+                tec-energysolutions.pe
+            </Link>
+
         </main>
     );
 }
