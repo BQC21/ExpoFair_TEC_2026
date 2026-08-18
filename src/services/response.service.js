@@ -12,7 +12,6 @@ function mapAnswersToCliente(answers) {
         interes: answers.interes_solar || null,
         consumo_energetico_mensual: answers.consumo || null,
         implementacion: answers.renovables || null,
-        propuesta: answers.propuesta || null,
     };
 }
 
