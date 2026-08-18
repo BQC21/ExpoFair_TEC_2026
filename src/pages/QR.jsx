@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { QRCodeSVG } from "qrcode.react";
 
 function QR() {
@@ -15,7 +14,7 @@ function QR() {
             </div>
 
             <h1 className="font-display mb-8 text-4xl font-extrabold text-white">
-                Expoferia 2026
+                ExpoEnergética 2026
             </h1>
 
             <section className="w-full max-w-sm rounded-2xl border border-[#3d6a96] bg-[#0e2744]/80 px-6 py-6">
@@ -44,12 +43,14 @@ function QR() {
                 [Vista previa: abrir formulario]
             </Link> */}
 
-            <Link
-                to="/form"
-                className="mt-6 text-sm text-[#7eb6e0] underline underline-offset-2 hover:text-white"
+            <a
+                href="https://tec-energysolutions.pe/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 text-2xl font-semibold text-[#7eb6e0] underline underline-offset-4 hover:text-white sm:text-3xl"
             >
                 tec-energysolutions.pe
-            </Link>
+            </a>
 
         </main>
     );
