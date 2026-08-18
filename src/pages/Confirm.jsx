@@ -35,9 +35,14 @@ function Confirm() {
 
             <footer className="mt-16 text-xs text-[#6b8aaa]">
                 <h2>Para mayor información consulte nuestra página web</h2>
-                <a href="tec-energysolutions.pe"
-                className="mt-6 text-sm text-[#7eb6e0] underline underline-offset-2 hover:text-white">
-                    tec-energysolutions.pe</a>
+                <a
+                    href="https://tec-energysolutions.pe/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-8 text-2xl font-semibold text-[#7eb6e0] underline underline-offset-4 hover:text-white sm:text-3xl"
+                >
+                    tec-energysolutions.pe
+                </a>
             </footer>
         </main>
     );
