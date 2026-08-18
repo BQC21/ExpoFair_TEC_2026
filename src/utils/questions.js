@@ -31,7 +31,7 @@ export const questions = [
     },
     {
         id: 'sector',
-        label: '6. ¿Cuál es su sector industrial?',
+        label: '6. ¿Cuál es el sector de su empresa?',
         type: 'select',
         options: ['Minería', 'Construcción', 'Manufactura', 
             'Agro-industria', 'Comercio', 'Servicios', 'Otro'],
@@ -39,11 +39,11 @@ export const questions = [
     },
     {
         id: 'interes_solar',
-        label: '7. ¿Está interesado en soluciones de energía solar para su empresa?',
+        label: '7. ¿Está interesado en soluciones de ahorro con energía solar para su empresa?',
         type: 'radio',
         options: ['Sí, tengo interés inmediato', 
             'Sí, para el mediano plazo', 
-            'Estoy evaluando opciones'], 
+            'Ya estoy evaluando opciones'], 
         required: true,
     },
     {
@@ -61,7 +61,7 @@ export const questions = [
         id: 'renovables',
         label: '9. ¿Ha implementado o evaluado alguna solución de energía renovable anteriormente?',
         type: 'radio',
-        options: ['Sí, ya tenemos instalaciones', 
+        options: ['Sí, ya tenemos instalado', 
             'Sí, lo hemos evaluado', 
             'No, pero nos interesa', 
             'No hemos considerado aún'],
