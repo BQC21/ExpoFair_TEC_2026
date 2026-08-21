@@ -1,44 +1,23 @@
-import { useEffect, useRef } from "react";
 import { QRCodeSVG } from "qrcode.react";
 
-const STAND_VIDEO_URL =
-    "https://drive.usercontent.google.com/download?id=1FIgBuXJTqtl-SKtYx3ab3gPzTuC3gyGG&export=download&confirm=t";
+const STAND_VIDEO_PREVIEW =
+    "https://drive.google.com/file/d/1FIgBuXJTqtl-SKtYx3ab3gPzTuC3gyGG/preview";
 
 function QR() {
     const formUrl = `${window.location.origin}/form`;
-    const standVideo = import.meta.env.VITE_STAND_VIDEO_URL || STAND_VIDEO_URL;
-    const videoRef = useRef(null);
-
-    useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-
-        const playInLoop = async () => {
-            video.muted = true;
-            try {
-                await video.play();
-            } catch {
-                video.muted = true;
-                await video.play().catch(() => {});
-            }
-        };
-
-        playInLoop();
-    }, [standVideo]);
+    const standVideo =
+        import.meta.env.VITE_STAND_VIDEO_URL || STAND_VIDEO_PREVIEW;
 
     return (
         <main className="hex-bg flex min-h-screen flex-col items-center justify-center px-6 py-8 text-center">
             <div className="flex w-full max-w-6xl flex-col items-stretch gap-6 lg:flex-row lg:items-center lg:justify-center">
                 <section className="w-full overflow-hidden rounded-2xl border border-[#3d6a96] bg-[#0e2744]/80 lg:w-[100%]">
-                    <video
-                        ref={videoRef}
+                    <iframe
                         src={standVideo}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        aria-label="Video del stand TEC Energy Solutions"
-                        className="aspect-video h-full w-full object-cover"
+                        title="Video del stand TEC Energy Solutions"
+                        allow="autoplay; fullscreen"
+                        allowFullScreen
+                        className="aspect-video h-full w-full border-0"
                     />
                 </section>
 
