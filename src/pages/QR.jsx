@@ -1,57 +1,54 @@
 import { QRCodeSVG } from "qrcode.react";
+import standVideo from "../assets/VIDEO STAND.mp4";
 
 function QR() {
     const formUrl = `${window.location.origin}/form`;
 
     return (
-        <main className="hex-bg flex min-h-screen flex-col items-center justify-center px-6 py-10 text-center">
-            <div className="mb-5 overflow-hidden rounded-lg bg-white px-3 py-2 shadow-md">
-                <img
-                    src="/Tec_ES_logo.png"
-                    alt="TEC Energy Solutions"
-                    className="h-14 w-auto"
-                />
-            </div>
-
-            <h1 className="font-display mb-8 text-4xl font-extrabold text-white">
-                ExpoEnergética 2026
-            </h1>
-
-            <section className="w-full max-w-sm rounded-2xl border border-[#3d6a96] bg-[#0e2744]/80 px-6 py-6">
-                <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-[#8eb4d4] uppercase">
-                    Escanea y participa
-                </p>
-
-                <div className="mx-auto mb-5 inline-flex rounded-xl bg-white p-3">
-                    <QRCodeSVG
-                        value={formUrl}
-                        size={220}
-                        level="H"
-                        marginSize={2}
+        <main className="hex-bg flex min-h-screen flex-col items-center justify-center px-6 py-8 text-center">
+            <div className="flex w-full max-w-6xl flex-col items-stretch gap-6 lg:flex-row lg:items-center lg:justify-center">
+                <section className="w-full overflow-hidden rounded-2xl border border-[#3d6a96] bg-[#0e2744]/80 lg:w-[100%]">
+                    <video
+                        src={standVideo}
+                        autoPlay
+                        loop
+                        // muted
+                        playsInline
+                        aria-label="Video del stand TEC Energy Solutions"
+                        className="aspect-video h-full w-full object-cover"
                     />
-                </div>
+                </section>
 
-                <h2 className="mb-2 text-xl font-bold text-white">
-                    Registra tu interés
-                </h2>
-            </section>
+                <section className="mx-auto w-full max-w-sm rounded-2xl border border-[#3d6a96] bg-[#0e2744]/80 px-6 py-6 lg:mx-0 lg:w-[30%]">
+                    <img
+                        src="/Tec_ES_logo.png"
+                        alt="TEC Energy Solutions"
+                        className="h-14 w-auto"
+                    />
 
-            {/* <Link
-                to="/form"
-                className="mt-6 text-sm text-[#7eb6e0] underline underline-offset-2 hover:text-white"
-            >
-                [Vista previa: abrir formulario]
-            </Link> */}
+                    <h1 className="font-display mb-8 text-4xl font-extrabold text-white">
+                        ExpoEnergética 2026
+                    </h1>
+                    
+                    
+                    <p className="mb-4 text-xs font-semibold tracking-[0.18em] text-[#8eb4d4] uppercase">
+                        Escanea para poder contactarnos más adelante
+                    </p>
 
-            <a
-                href="https://tec-energysolutions.pe/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 text-2xl font-semibold text-[#7eb6e0] underline underline-offset-4 hover:text-white sm:text-3xl"
-            >
-                tec-energysolutions.pe
-            </a>
+                    <div className="mx-auto mb-5 inline-flex rounded-xl bg-white p-3">
+                        <QRCodeSVG
+                            value={formUrl}
+                            size={220}
+                            level="H"
+                            marginSize={2}
+                        />
+                    </div>
 
+                    <h2 className="mb-2 text-xl font-bold text-white">
+                        Registra tu interés
+                    </h2>
+                </section>
+            </div>
         </main>
     );
 }
