@@ -25,3 +25,6 @@ dist-ssr
 
 # Environmetal variables
 .env
+
+# Videos pesados (GitHub limita a 100MB)
+*.mp4

@@ -1,8 +1,9 @@
 import { QRCodeSVG } from "qrcode.react";
-import standVideo from "../assets/VIDEO STAND.mp4";
 
 function QR() {
     const formUrl = `${window.location.origin}/form`;
+    const standVideo =
+        import.meta.env.VITE_STAND_VIDEO_URL || "/VIDEO_STAND.mp4";
 
     return (
         <main className="hex-bg flex min-h-screen flex-col items-center justify-center px-6 py-8 text-center">
